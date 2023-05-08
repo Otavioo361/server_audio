@@ -20,16 +20,16 @@ class TextToSpeech:
             return False
 
     def convert_text_to_speech(self, username, text):
-        temp_file = tempfile.NamedTemporaryFile(delete=False)
+        
 
         # verifica se o usuário está autenticado
         if username in self.authenticated_users:
             # converte o texto em áudio usando a biblioteca gTTS
 
             tts = gTTS(text, lang='pt-br')
-            tts.write_to_fp(temp_file)
-            temp_file.close()
-            os.startfile(temp_file.name, 'open', 'wmplayer.exe')
+            tts.save('audio.mp3')
+            os.system('mpg321 audio.mp3' )
+            os.remove('audio.mp3')
             # reproduz o áudio usando o player
             return True
         else:
