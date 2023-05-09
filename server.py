@@ -1,12 +1,8 @@
-import Pyro4  # importa o módulo Pyro4 para criar um servidor de objetos distribuídos
-import os  # importa o módulo os para executar comandos do sistema operacional
-import time  # importa o módulo time para controlar o tempo de espera
-import tempfile  # importa o módulo tempfile para criar arquivos temporários
-# importa a classe gTTS da biblioteca gtts para converter texto em áudio
+import Pyro4
+import os
+import time
 from gtts import gTTS
-import threading  # importa o módulo threading para gerenciar threads de execução concorrente
-
-# define uma classe para representar uma solicitação de conversão de texto em áudio
+import threading
 
 
 @Pyro4.expose
