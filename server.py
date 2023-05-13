@@ -15,7 +15,7 @@ class Server(object):
         self.thread.start()
     def authenticate(self,username,password):
         if username== "otavio" and password == "otavio123":
-            return "valid_token"
+            return "senha_certa"
         else:
             return None
 
@@ -50,7 +50,7 @@ class Server(object):
             messagem.process()
             
     def receive_messagem(self, message, token):
-        if token == "valid_token":
+        if token == "senha_certa":
             with self.lock:
                 self.queue.append(message)
         else:
